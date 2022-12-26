@@ -3,13 +3,26 @@ name : pipeline
 on: [push]
 
 jobs:
-
+  audit:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [14, 16, 18]
+    name: Audit ${{ matrix.node }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+      - run: npm-audit --critical=1 --shouldwarn --retry=10
+      
   npmCi:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node: [ 14, 16, 18 ]
-    name: Node ${{ matrix.node }} sample
+    name: Node ${{ matrix.node }}
     steps:
       - uses: actions/checkout@v3
       - name: Setup node
