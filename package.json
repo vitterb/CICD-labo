@@ -1,0 +1,24 @@
+{
+  "name": "@bdougie/theweeknum",
+  "version": "0.3.4",
+  "description": "a package that tells you the week number",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "release": "standard-version --tag-prefix="
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bdougie/theWeekNum.git"
+  },
+  "author": "bdougie",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bdougie/theWeekNum/issues"
+  },
+  "homepage": "https://github.com/bdougie/theWeekNum#readme",
+  "devDependencies": {
+    "jest": "^26.1.0",
+    "standard-version": "^9.2.0"
+  }
+}
