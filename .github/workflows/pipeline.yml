@@ -15,7 +15,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
-      - run: npm audit --info
+      - run: $ npm audit --audit-level=info
      
       
   npmCi:
