@@ -26,4 +26,4 @@ jobs:
       with:
         output: './sbom.xml'
     - name: secret-search 
-      uses: Hacks4Snacks/secret-seaerch@main
+      uses: Hacks4Snacks/secret-search@main
