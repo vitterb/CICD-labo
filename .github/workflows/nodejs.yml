@@ -1,4 +1,4 @@
-name : Node.js CI
+name : pipeline start
 
 on: [push]
 
