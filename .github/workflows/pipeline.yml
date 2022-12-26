@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
 
-      - run: npm audit --audit-level=info
+      - run: npm audit fix
      
       
   npmCi:
