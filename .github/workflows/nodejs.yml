@@ -26,7 +26,7 @@ jobs:
         npm run build --if-present
         npm test
     - name: Checkout the code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v1
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag localbuild/testimage:latest
     - name: Scan the image and upload dependency results
