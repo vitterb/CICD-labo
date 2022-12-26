@@ -15,8 +15,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
-      - run: npm i npm-audit-pipeline --save-dev
-      - run: npm-audit --critical=1 --shouldwarn --retry=10
+      - run: npm audit
+     
       
   npmCi:
     runs-on: ubuntu-latest
