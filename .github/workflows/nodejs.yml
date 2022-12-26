@@ -10,7 +10,10 @@ jobs:
     strategy:
       matrix:
         node-version: [10.x, 12.x]
-        
+    
+    permissions:
+      contents: write # required to upload to the Dependency submission API
+    
     steps:
     - uses: actions/checkout@v1
     - name: Use Node.js ${{matrix.node-version}}
@@ -22,3 +25,16 @@ jobs:
         npm install
         npm run build --if-present
         npm test
+    - name: Checkout the code
+      uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag localbuild/testimage:latest
+    - name: Scan the image and upload dependency results
+      uses: anchore/sbom-action@bb716408e75840bbb01e839347cd213767269d4a
+      with:
+        image: "localbuild/testimage:latest"
+        artifact-name: image.spdx.json
+        dependency-snapshot: true
+    
+
+   
