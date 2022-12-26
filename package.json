@@ -4,6 +4,7 @@
   "description": "a package that tells you the week number",
   "main": "index.js",
   "scripts": {
+    "package-audit": "npm-audit",
     "test": "jest",
     "release": "standard-version --tag-prefix="
   },
